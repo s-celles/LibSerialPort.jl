@@ -14,21 +14,29 @@ Apart from a very few non-essential functions, the entire library API (about 75 
 
 This package is not in the Julia package registry. Our plan is to merge it into [SerialPorts.jl](https://github.com/JuliaIO/SerialPorts.jl). For now, it can be cloned via
 
-    julia> using Pkg
-    julia> Pkg.add("https://github.com/andrewadare/LibSerialPort.jl.git")
+```julia
+julia> using Pkg
+julia> Pkg.add("https://github.com/andrewadare/LibSerialPort.jl.git")
+```
 
 To install the C library, do `Pkg.build`:
 
-    julia> Pkg.build("LibSerialPort")
+```julia
+julia> Pkg.build("LibSerialPort")
+```
 
 On Unix-like systems, this `libserialport` will be built from source. On Windows a pre-built shared library is downloaded and installed into the package directory. Alternatively, follow the [build instructions](http://sigrok.org/wiki/Libserialport) for a system-wide build. If installation through the package system succeeded, then
 
-    julia> readdir(joinpath(Pkg.dir("LibSerialPort"), "deps/usr/lib"))
+```julia
+julia> readdir(joinpath(Pkg.dir("LibSerialPort"), "deps/usr/lib"))
+```
 
 should list your new library. Type
 
-    julia> using LibSerialPort
-    julia> list_ports()
+```julia
+julia> using LibSerialPort
+julia> list_ports()
+```
 
 to get a list of ports detected on your system.
 
