@@ -14,7 +14,8 @@ Apart from a very few non-essential functions, the entire library API (about 75 
 
 This package is not in the Julia package registry. Our plan is to merge it into [SerialPorts.jl](https://github.com/JuliaIO/SerialPorts.jl). For now, it can be cloned via
 
-    julia> Pkg.clone("https://github.com/andrewadare/LibSerialPort.jl.git")
+    julia> using Pkg
+    julia> Pkg.add("https://github.com/andrewadare/LibSerialPort.jl.git")
 
 To install the C library, do `Pkg.build`:
 
